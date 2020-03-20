@@ -5,10 +5,10 @@
 </template>
 
 <script>
-import RowTitle from '@/components/RowTitle'
+// import RowTitle from '@/components/RowTitle'
 export default {
   name: 'app',
-  components: { RowTitle },
+  // components: { RowTitle },
   data () {
     return {
       msg: 'Welcome to Your Vue.js App'

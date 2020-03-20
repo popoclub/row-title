@@ -1,13 +1,16 @@
 var path = require('path')
 var webpack = require('webpack')
-var env = process.env.NODE_ENV
+var prod = process.env.NODE_ENV === 'production'
 
 module.exports = {
-  entry: env === 'production' ? './src/components/index.js' : './src/main.js',
+  entry: prod ? './src/components/index.js' : './src/main.js',
   output: {
     path: path.resolve(__dirname, './dist'),
     publicPath: '/dist/',
-    filename: 'build.js'
+    filename: 'build.js',
+    library: prod ? 'row-title' : '',
+    libraryTarget: 'umd',
+    umdNamedDefine: true
   },
   module: {
     rules: [
